@@ -2,9 +2,9 @@ const Koa=require("koa");
 
 const path=require("path");
 
-const router=require("./router");
-
 const bodyParser=require("koa-bodyparser");
+
+const router=require("./router");
 
 const app=new Koa();
 
