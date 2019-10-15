@@ -1,7 +1,10 @@
-let router=require("koa-router");
+let router=require("koa-router")();
 
-router.get("/api/userlist",ctx=>{
-    
+const query=require("../db/query")
+
+router.get("/api/userlist",async ctx=>{
+    let data = await query('select * from mumber')
+    ctx.body=data;
 })
 
 module.exports=router;

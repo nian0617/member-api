@@ -2,7 +2,7 @@ const Koa=require("koa");
 
 const path=require("path");
 
-const router=require("./public");
+const router=require("./router");
 
 const bodyParser=require("koa-bodyparser");
 
@@ -11,6 +11,7 @@ const app=new Koa();
 const static=require("koa-static");
 
 app.use(static(path.join(process.cwd(),"public")));
+app.use(bodyParser());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
